@@ -1,0 +1,231 @@
+Procedural Programming
+- Instruksi dilakukan langkah demi langkah
+- Memecah program menjadi bagian-bagian kecil
+- Disebut prosedur, subroutine atau function
+- Linear / Top-to-Bottom
+- Fortran, ALGOL, COBOL, Pascal, C, PHP, Javascript
+
+Kelebihan Procedural Programming
+- To-the-point
+- Simplicity & kemudahan implementasi ( untuk compiler & interpreter )
+- Mudah ditelusuri
+- Membutuhkan lebih sedikit memory ( dibandingkan dengan OOP )
+
+Object Oriented Programming
+- Menyusun semua kode program dan struktur data sebagai objek
+- Objek adalah unit dasar dari program
+- Objek menyimpan data dan perilaku
+- Objek bisa saling berinteraksi
+- Java, Ruby, Python, C++, Javascript, PHP5
+
+Kelebihan Object Oriented Programming
+- Representasi dunia nyata
+- Enkapsulasi & Abstraksi Data
+- Reusability
+- Skalabilitas & Ekstensibilitas
+- Kemudahan Pengelolaan
+- Kolaborasi
+- Digunakan oleh Framework
+
+Konsep OOP pada PHP ?
+Basic :
+- Class & Object
+- Property & Method
+- Constructor
+- Object Type
+- Inheritance
+- Visibility / Access Modifier
+- Setter & Getter
+- Static Method
+
+Advanced:
+- Abstract & Interface
+- Interceptor
+- Object Cloning
+- Callbacks & Closures
+- Namespaces & Autoloading
+- ...
+
+Class 
+- Blueprint / Template untuk membuat instance dari object
+- Class mendefinisikan Object
+- Menyimpan data dan perilaku yang disebut dengan property dan method
+
+Membuat class
+- Diawali dengan menuliskan keyword class, diikuti nama dan dibatasi dengan {} untuk menyimpan property dan method
+- Aturan penamaan class sama seperti variable
+
+
+Object 
+- Instance yang didefinisikan oleh Class
+- Banyak object dapat dibuat menggunakan satu class
+- Object dibuat dengan keyword new
+
+
+
+
+========= Pertemuan 3 ==========
+
+Property 
+- Merepresentasikan data / keadaan dari sebuah object
+- Variabel yang ada di dalam object ( member variable )
+- Sama seperti di dalam PHP, ditambah dengan visibility di depannya
+
+Method 
+- Merepresentasikan perilaku dari sebuah object
+- Function yang ada didalam Object
+- Sama seperti function di dalam PHP, ditambah dengan visibility di depannya
+
+
+=========== Pertemuan 4 ============
+
+Constructor
+
+
+
+=========== Pertemuan 5 ===============
+
+Object Type
+
+
+========== Pertemuan 6 ============
+
+Inheritance
+- Menciptakan hierarki antar kelas ( Parent & Child )
+- Child Class, mewarisi semua properti dan method dari parent-nya ( yang visible )
+- Child Class, memperluas ( extends ) fungsionalitas dari parent-nya
+
+========== Pertemuan 7 ==========
+
+Inheritance Bagian 2
+
+========== Pertemuan 8 ==========
+
+Overriding adalah sebuah istilah dimana kita membuat method dikelas child yang memiliki nama yang sama dengan parent class
+
+========= Pertemuan 9 ===========
+
+Visibility atau Access Modifier
+- Konsep yang digunakan untuk mengatur akses dari property dan method pada sebuah objek
+- ada 3 keyword visibility : public, protected dan private
+	- public, dapat digunakan dimana saja, bahkan diluar kelas
+	- protected, hanya dapat digunakan didalam sebuah kelas beserta turunannya
+	- private, hanya dapat digunakan di dalam sebuah kelas tertentu saja
+
+
+Kenapa? 
+- Hanya memperlihatkan aspek dari class yang dibutuhkan oleh "client"
+- Menentukan kebutuhan yang jelas untuk object
+- Memberikan kendali pada kode untuk menghindari "bug"
+
+============ Pertemuan 10 ============
+Setter dan Getter ( Accessor Method )
+
+
+
+========== Pertemuan 11 =============
+Static Keyword
+
+class merupakan template dari object.
+kita bisa mengakses property dan method dalam konteks class
+
+untuk apa static keyword?
+Static Keyword 
+- Member yang terikat dengan class, bukan dengan object
+- Nilai static akan selalu tetap meskipun object di instansiasi berulang kali.
+- Membuat kode menjadi 'procedural'
+- Biasanya digunakan untuk membuat fungsi bantuan / helper
+- Atau digunakan di class-class utility pada Framework
+
+======== Pertemuan 12 ===========
+Constant adalah sebuah identifier untuk menyimpan nilai.
+Nilai yang disimpan tidak dapat berubah.
+
+cara membuat di php ada 2 cara :
+define()
+const
+
+perbedaan nya define() tidak bisa disimpan didalam class, sedangkan const bisa disimpan di dalam class.
+
+Magic Constant
+- __LINE__
+- __FILE__
+- __DIR__
+- __FUNCTION__
+- __CLASS__
+- __TRAIT__
+- __METHOD__
+- __NAMESPACE__
+
+======== Pertemuan 13 =========
+Abstract Class(1)
+- Sebuah kelas yang tidak dapat di-instansiasi
+- Kelas 'abstrak'
+- Mendefinisikan interface untuk kelas lain yang menjadi turunannya
+- Berperan sebagai 'kerangka dasar' untuk kelas turunannya.
+- Memiliki minimal 1 method abstrak.
+- Digunakan dalam 'pewarisan' / inheritance untuk 'memaksakan' implementasi method abstrak yang sama untuk semua kelas turunannya.
+
+contoh membuat class abstract :
+abstract class Buah { // <<kelas abstrak
+private $warna;
+
+abstract public function makan(); //<< 1. method abstrak 2. hanya interface nya saja 3. implementasinya, ada dikelas turunannya.
+
+public function setWarna($warna) {
+$this->warna = $warna;
+	}
+}
+
+Abstract Class(2)
+- Semua kelas turunan, harus mengimplementasikan method abstrak yang ada di kelas abstraknya
+- Kelas abstrak boleh memiliki property / method reguler
+- Kelas abstrak boleh memiliki property / static method.
+
+Contoh Kelas Abstrak
+
+- class Mobil Extends Kendaraan
+- class Laptop Extends Komputer
+- Class Email Extends Komunikasi
+.....
+
+kenapa kelas abstrak?
+- Merpresentasikan ide atau konsep dasar
+- "Composition over Inheritance"
+- Salah satu cara menerapkan Polimorphism
+- Sentralisasi logic
+- Mempermudah pengerjaan tim
+
+======== Pertemuan 14 ======== 
+Abstract Class ( bagian 2 )
+
+studi kasus.
+
+
+========= Pertemuan 15 ===========
+Interface
+- Kelas Abstrak yang sama sekali tidak memiliki implementasi
+- Murni merupakan template untuk kelas turunannya
+- Tidak boleh memiliki property, hanya deklarasi method saja
+- Semua method harus dideklarasikan dengan visibility public
+- Boleh mendeklarasikan __construct()
+- Satu kelas boleh mengimplementasikan banyak interface.
+- Dengan menggunakan type-hinting dapat melakukan 'Dependency Injection'
+- Pada akhirnya akan mencapai Polymorphism
+
+
+=========== Pertemuan 16 ============
+Autoloading adalah memanggil class (file) tanpa harus menggunkan require
+1 class ditulis dalam 1 file
+
+spl_autoload_register();
+spl = standar php library.
+
+
+=========== Pertemuan 17 ===============
+Namespace adalah sebuah cara untuk mengelompokkan program ke dalam sebuah package tersendiri atau disebut Encapsulation
+
+kenapa? PHP tidak mengijinkan kita untuk memiliki 2 Class dengan nama yang sama. 
+
+usulan penulisan namespace
+namespace Vendor\Namespace\SubNamespace;
